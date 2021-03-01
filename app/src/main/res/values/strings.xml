@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Weather</string>
+    <string name="unit">°C</string>
+    <string name="title_activity_add_city">AddCity</string>
+    <string name="weather_image">Weather Image</string>
+    <string name="search_places">Search places</string>
+    <string name="recently_added">Recently Added:</string>
+</resources>

@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <RelativeLayout
+        android:id="@+id/background"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/bottom"
+        android:background="@drawable/background1"
+        android:padding="20dp">
+
+        <TextView
+            android:id="@+id/name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/add_city"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="20dp"
+            android:textColor="@android:color/white"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/name"
+            android:layout_alignStart="@id/name"
+            android:textColor="@android:color/white"
+            android:textSize="15sp" />
+
+        <ImageView
+            android:id="@+id/weatherImage"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:layout_below="@id/add_city"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="20dp"
+            android:contentDescription="@string/weather_image" />
+
+        <Button
+            android:id="@+id/add_city"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_alignParentEnd="true"
+            android:background="@drawable/add_location_symbol"
+            android:backgroundTint="@android:color/white" />
+
+        <TextView
+            android:id="@+id/temperature"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@id/minMax"
+            android:layout_marginStart="20dp"
+            android:textColor="@android:color/white"
+            android:textSize="80sp" />
+
+        <TextView
+            android:id="@+id/unit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@id/temperature"
+            android:layout_toEndOf="@id/temperature"
+            android:text="@string/unit"
+            android:textColor="@android:color/white"
+            android:textSize="40sp" />
+
+        <TextView
+            android:id="@+id/minMax"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignStart="@id/temperature"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="20dp"
+            android:textColor="@android:color/white"
+            android:textSize="20sp" />
+
+    </RelativeLayout>
+
+    <TableLayout
+        android:id="@+id/bottom"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:stretchColumns="0,1">
+
+        <TableRow>
+
+            <include
+                android:id="@+id/feels_like"
+                layout="@layout/model" />
+
+            <include
+                android:id="@+id/humidity"
+                layout="@layout/model" />
+        </TableRow>
+
+        <TableRow>
+
+            <include
+                android:id="@+id/wind"
+                layout="@layout/model" />
+
+            <include
+                android:id="@+id/pressure"
+                layout="@layout/model" />
+        </TableRow>
+    </TableLayout>
+</RelativeLayout>
